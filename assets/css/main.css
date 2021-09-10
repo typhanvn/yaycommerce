@@ -334,8 +334,8 @@ button, input[type='button'], input[type='reset'], input[type='submit'] {
 
 @font-face {
   font-family: 'e-comstore';
-  src: url("../fonts/icomoon/icomoon.eot?1702016800");
-  src: url("../fonts/icomoon/icomoon.woff2?1702016800") format("woff2"), url("../fonts/icomoon/icomoon.woff?1702016800") format("woff"), url("../fonts/icomoon/icomoon.ttf?1702016800") format("truetype"), url("../fonts/icomoon/icomoon.svg?1702016800#icomoon") format("svg");
+  src: url("../fonts/icomoon/icomoon.eot?1227406887");
+  src: url("../fonts/icomoon/icomoon.woff2?1227406887") format("woff2"), url("../fonts/icomoon/icomoon.woff?1227406887") format("woff"), url("../fonts/icomoon/icomoon.ttf?1227406887") format("truetype"), url("../fonts/icomoon/icomoon.svg?1227406887#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -456,7 +456,7 @@ button, input[type='button'], input[type='reset'], input[type='submit'] {
 
 @media screen and (min-width: 1024px) {
   #main-content {
-    padding-top: 138px;
+    padding-top: 134px;
   }
 }
 
@@ -3879,20 +3879,19 @@ h6 {
 
 @media screen and (min-width: 1024px) {
   .e-dropdown .dropdown-toggle {
-    padding: 18px 0;
+    padding: 16px 0;
   }
 }
 
 .e-dropdown .dropdown {
   position: absolute;
-  min-width: 123px;
+  min-width: 125px;
   left: 0;
   top: 100%;
   padding: 5px 0;
   background-color: var(--white);
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  border-radius: 0 0 5px 5px;
+  -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.07), 0 20px 30px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.07), 0 20px 30px rgba(0, 0, 0, 0.07);
   opacity: 0;
   pointer-events: none;
   -webkit-transform: translateY(10px);
@@ -3904,20 +3903,36 @@ h6 {
   z-index: 1050;
 }
 
-.e-dropdown .dropdown li.selected a, .e-dropdown .dropdown li:hover a {
-  background-color: var(--white-2);
-  color: var(--red);
+.e-dropdown .dropdown li {
+  padding: 8px 15px;
+}
+
+@media screen and (min-width: 1024px) {
+  .e-dropdown .dropdown li.selected a::before, .e-dropdown .dropdown li:hover a::before {
+    right: 0;
+  }
 }
 
 .e-dropdown .dropdown a {
-  padding: 10px 15px;
+  position: relative;
   color: var(--dark);
-  display: block;
-  -webkit-transition: all .3s;
-  -o-transition: all .3s;
-  transition: all .3s;
   font-size: 16px;
   line-height: 16px;
+}
+
+@media screen and (min-width: 1024px) {
+  .e-dropdown .dropdown a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    height: 1px;
+    background-color: var(--dark);
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
 }
 
 .qty-input {
@@ -6189,6 +6204,7 @@ h6 {
 }
 
 .social li a {
+  color: var(--gray);
   -webkit-transition: opacity .3s;
   -o-transition: opacity .3s;
   transition: opacity .3s;
@@ -7698,8 +7714,8 @@ html.open-filter .float-filter .float-view__content {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background-color: var(--dark);
-  color: var(--white);
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
 }
 
 @media screen and (max-width: 1023px) {
@@ -7719,7 +7735,6 @@ html.open-filter .float-filter .float-view__content {
 
 .header__main {
   position: relative;
-  color: var(--gray);
 }
 
 @media screen and (max-width: 1023px) {
@@ -7812,6 +7827,7 @@ html.open-filter .float-filter .float-view__content {
     -o-transition: all .5s ease;
     transition: all .5s ease;
     border-top: 1px solid var(--line);
+    overflow-x: hidden;
     overflow-y: auto;
     max-height: 90vh;
   }
@@ -7841,14 +7857,30 @@ html.open-filter .float-filter .float-view__content {
   font-weight: 500;
 }
 
-.header__main .menu-ul > li.active > a, .header__main .menu-ul > li:hover > a {
-  color: var(--dark);
+@media screen and (min-width: 1024px) {
+  .header__main .menu-ul > li.active > a::before, .header__main .menu-ul > li:hover > a::before {
+    right: 0;
+  }
 }
 
 .header__main .menu-ul > li > a {
+  position: relative;
   display: block;
   padding-top: 30px;
   padding-bottom: 30px;
+}
+
+.header__main .menu-ul > li > a::before {
+  content: '';
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 100%;
+  height: 1px;
+  background-color: var(--dark);
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 @media screen and (max-width: 1023px) {
@@ -7974,17 +8006,25 @@ html.open-filter .float-filter .float-view__content {
 }
 
 .main-menu .sub-menu > li {
+  display: block;
+  padding: 10px 15px;
   margin-right: 0;
   color: var(--dark);
   font-weight: 400;
+  border-bottom: 1px solid var(--gray-3);
+}
+
+@media screen and (min-width: 1024px) {
+  .main-menu .sub-menu > li {
+    padding: 11px 14px;
+    border-bottom: 0;
+  }
 }
 
 .main-menu .sub-menu > li.back-menu {
   position: relative;
   font-size: 16px;
   font-weight: 700;
-  padding: 10px 15px;
-  border-bottom: 1px solid var(--gray-3);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8017,25 +8057,26 @@ html.open-filter .float-filter .float-view__content {
 
 .main-menu .sub-menu > li > a {
   position: relative;
-  display: block;
-  padding: 10px 15px;
-  -webkit-transition: color .3s;
-  -o-transition: color .3s;
-  transition: color .3s;
-  border-bottom: 1px solid var(--gray-3);
 }
 
 @media screen and (min-width: 1024px) {
-  .main-menu .sub-menu > li > a {
-    padding: 11px 14px;
-    border-bottom: 0;
+  .main-menu .sub-menu > li > a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    height: 1px;
+    background-color: var(--dark);
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .main-menu .sub-menu > li:hover {
-    background-color: var(--white-2);
-    color: var(--red);
+  .main-menu .sub-menu > li:hover > a::before {
+    right: 0;
   }
 }
 
@@ -8046,9 +8087,8 @@ html.open-filter .float-filter .float-view__content {
 @media screen and (min-width: 1024px) {
   .main-menu .sub-menu {
     padding-left: 0;
-    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    border-radius: 0 0 5px 5px;
+    -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.07), 0 20px 30px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.07), 0 20px 30px rgba(0, 0, 0, 0.07);
     -webkit-transform: translateY(30px);
     -ms-transform: translateY(30px);
     transform: translateY(30px);
@@ -8069,33 +8109,6 @@ html.open-filter .float-filter .float-view__content {
     -o-transition: ease-in-out 0.5s;
     transition: ease-in-out 0.5s;
     z-index: 10;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .main-menu .sub-menu .sub-menu {
-    padding-left: 10px;
-    padding-top: 15px;
-    padding-bottom: 5px;
-    top: 0;
-    left: 100%;
-    background-color: transparent;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .main-menu .sub-menu .sub-menu::after {
-    content: '';
-    position: absolute;
-    left: 10px;
-    right: 0;
-    top: 10px;
-    bottom: 0;
-    background: var(--white);
-    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    z-index: -1;
   }
 }
 
@@ -8141,13 +8154,13 @@ html.open-filter .float-filter .float-view__content {
   }
 }
 
-.main-menu li.has-sub > a {
+.main-menu li.has-sub {
   position: relative;
   padding-right: 20px;
 }
 
 @media screen and (min-width: 1024px) {
-  .main-menu li.has-sub > a::after {
+  .main-menu li.has-sub::after {
     content: '\e913';
     font-family: 'e-comstore' !important;
     speak: never;
@@ -8185,10 +8198,7 @@ html.open-filter .float-filter .float-view__content {
 }
 
 @media screen and (min-width: 1024px) {
-  .main-menu li.has-sub .has-sub {
-    position: static;
-  }
-  .main-menu li.has-sub .has-sub > a::after {
+  .main-menu li.has-sub .has-sub::after {
     right: 15px;
     -webkit-transform: translateY(-50%) rotate(-90deg);
     -ms-transform: translateY(-50%) rotate(-90deg);
