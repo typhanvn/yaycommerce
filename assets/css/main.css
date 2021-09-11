@@ -138,6 +138,7 @@ audio:not([controls]) {
 }
 
 a {
+  display: inline-block;
   background: transparent;
   color: inherit;
   text-decoration: none;
@@ -334,8 +335,8 @@ button, input[type='button'], input[type='reset'], input[type='submit'] {
 
 @font-face {
   font-family: 'e-comstore';
-  src: url("../fonts/icomoon/icomoon.eot?1227406887");
-  src: url("../fonts/icomoon/icomoon.woff2?1227406887") format("woff2"), url("../fonts/icomoon/icomoon.woff?1227406887") format("woff"), url("../fonts/icomoon/icomoon.ttf?1227406887") format("truetype"), url("../fonts/icomoon/icomoon.svg?1227406887#icomoon") format("svg");
+  src: url("../fonts/icomoon/icomoon.eot?2533706642");
+  src: url("../fonts/icomoon/icomoon.woff2?2533706642") format("woff2"), url("../fonts/icomoon/icomoon.woff?2533706642") format("woff"), url("../fonts/icomoon/icomoon.ttf?2533706642") format("truetype"), url("../fonts/icomoon/icomoon.svg?2533706642#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -3885,7 +3886,7 @@ h6 {
 
 .e-dropdown .dropdown {
   position: absolute;
-  min-width: 125px;
+  min-width: 120px;
   left: 0;
   top: 100%;
   padding: 5px 0;
@@ -3917,7 +3918,6 @@ h6 {
   position: relative;
   color: var(--dark);
   font-size: 16px;
-  line-height: 16px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -7535,19 +7535,29 @@ html.open-filter .float-filter .float-view__content {
 .footer__main ul li li {
   font-weight: 400;
   font-size: 16px;
-  line-height: 21px;
-  color: var(--gray);
   margin-bottom: 10px;
 }
 
-@media screen and (min-width: 768px) {
-  .footer__main ul li li {
-    margin-bottom: 15px;
-  }
+.footer__main ul li li a {
+  position: relative;
+  display: inline-block;
 }
 
-.footer__main ul li li a:hover {
-  text-decoration: underline;
+.footer__main ul li li a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 100%;
+  height: 1px;
+  background-color: var(--dark);
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.footer__main ul li li a:hover::before {
+  right: 0;
 }
 
 .footer__main .follow-us {
@@ -7778,8 +7788,11 @@ html.open-filter .float-filter .float-view__content {
   .header__main .list-item li {
     margin-right: 15px;
   }
-  .header__main .list-item li:nth-child(2) {
+  .header__main .list-item li:nth-child(2), .header__main .list-item li:last-child {
     display: none;
+  }
+  .header__main .list-item li:nth-last-child(2) {
+    margin-right: 0;
   }
   .header__main .list-item li svg {
     max-width: 18px;
@@ -8470,6 +8483,10 @@ html.open-search .header-search__results {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
+}
+
+.our-blog .list-news .title a:hover {
+  text-decoration: underline;
 }
 
 .our-blog .list-news .news__item {
